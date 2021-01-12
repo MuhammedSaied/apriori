@@ -1,0 +1,30 @@
+Tra = int(input("Enter The Number Of Transactions: "))
+Items = int(input("Enter The Number Of Items: "))
+names = []
+for n in range(Items):
+    n = (str(input("Enter the name of the product")))
+    names.append(n)
+print(names)
+supmin = int(input("Enter The Desired Minimum Support:"))
+
+Container = []
+
+for x in range(0, Tra):
+    TraItems = []
+    ItemNumber = int(input("Enter The Number Of Item Of The Transaction Number  " + str(x + 1) + " : "))
+    while ItemNumber > Items:
+        ItemNumber = int(input("Your Item Number is lager Than The Number Of Items! ,Plese Enter Another Number: "))
+
+    for y in range(0, ItemNumber):
+        Item = str(input("Enter the  Item " + str(y + 1) + " : "))
+        TraItems.append(Item)
+
+    Container.append(TraItems)
+print(Container)
+
+
+import collections
+c = collections.Counter()
+for k in Container:
+     c.update(k)
+print(c)
